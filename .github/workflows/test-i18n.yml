@@ -1,0 +1,47 @@
+name: Test Project Balboa bilingual rendering
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test-i18n:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install jsdom
+        run: npm install --no-save jsdom
+      - name: Test English rendering
+        run: |
+          node <<'NODE'
+          const fs=require('fs');
+          const {JSDOM,VirtualConsole}=require('jsdom');
+          const html=fs.readFileSync('index.html','utf8');
+          const vc=new VirtualConsole();
+          vc.on('jsdomError',e=>console.error('JSDOM ERROR:',e.message));
+          vc.on('error',e=>console.error('CONSOLE ERROR:',e));
+          const dom=new JSDOM(html,{
+            runScripts:'dangerously',
+            resources:'usable',
+            pretendToBeVisual:true,
+            url:'https://project-balboa.github.io/?lang=en',
+            virtualConsole:vc,
+            beforeParse(window){window.IntersectionObserver=class{observe(){} disconnect(){}};}
+          });
+          setTimeout(()=>{
+            const h1=dom.window.document.querySelector('h1')?.textContent.trim();
+            const en=dom.window.document.getElementById('langEn');
+            console.log('HTML LANG:',dom.window.document.documentElement.lang);
+            console.log('EN CLASS:',en?.className);
+            console.log('EN ARIA:',en?.getAttribute('aria-pressed'));
+            console.log('H1:',h1);
+            if(h1!=='Panama does not need a new currency.') process.exit(1);
+          },500);
+          NODE
