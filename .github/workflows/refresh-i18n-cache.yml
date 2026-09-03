@@ -1,0 +1,35 @@
+name: Refresh Project Balboa i18n cache
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-i18n:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Version the translation script
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          s = s.replace('assets/i18n.js"', 'assets/i18n.js?v=20260902-2"')
+          p.write_text(s, encoding='utf-8')
+          PY
+      - name: Commit cache-busting update
+        run: |
+          if git diff --quiet; then
+            echo "No change needed"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Force fresh bilingual translation script"
+          git push
