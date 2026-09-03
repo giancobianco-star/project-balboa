@@ -16,6 +16,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
+      - name: Check translation script syntax
+        run: node --check assets/i18n.js
       - name: Install jsdom
         run: npm install --no-save jsdom
       - name: Test English rendering
@@ -26,15 +28,7 @@ jobs:
           const html=fs.readFileSync('index.html','utf8');
           const vc=new VirtualConsole();
           vc.on('jsdomError',e=>console.error('JSDOM ERROR:',e.message));
-          vc.on('error',e=>console.error('CONSOLE ERROR:',e));
-          const dom=new JSDOM(html,{
-            runScripts:'dangerously',
-            resources:'usable',
-            pretendToBeVisual:true,
-            url:'https://project-balboa.github.io/?lang=en',
-            virtualConsole:vc,
-            beforeParse(window){window.IntersectionObserver=class{observe(){} disconnect(){}};}
-          });
+          const dom=new JSDOM(html,{runScripts:'dangerously',pretendToBeVisual:true,url:'https://project-balboa.github.io/?lang=en',virtualConsole:vc,beforeParse(window){window.IntersectionObserver=class{observe(){} disconnect(){}};}});
           setTimeout(()=>{
             const h1=dom.window.document.querySelector('h1')?.textContent.trim();
             const en=dom.window.document.getElementById('langEn');
