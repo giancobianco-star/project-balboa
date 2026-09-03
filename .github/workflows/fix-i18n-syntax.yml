@@ -1,0 +1,81 @@
+name: Repair Project Balboa bilingual translation
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  repair-i18n:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Remove stray render brace
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          def repair(path):
+              p = Path(path)
+              lines = p.read_text(encoding='utf-8').splitlines(True)
+              changed = False
+              for i in range(len(lines)-1):
+                  body = lines[i].rstrip('\r\n')
+                  nxt = lines[i+1].lstrip()
+                  if body.lstrip().startswith('function render(lang)') and body.endswith('}') and nxt.startswith('const ogTitle'):
+                      newline = '\r\n' if lines[i].endswith('\r\n') else '\n'
+                      lines[i] = body[:-1] + newline
+                      changed = True
+                      break
+              if not changed:
+                  raise SystemExit(f'Stray render brace pattern not found in {path}')
+              p.write_text(''.join(lines), encoding='utf-8')
+              print(f'Repaired {path}')
+
+          repair('assets/i18n.js')
+          repair('index.html')
+          PY
+      - name: Check translation syntax
+        run: node --check assets/i18n.js
+      - name: Install jsdom
+        run: npm install --no-save jsdom
+      - name: Verify English actually renders
+        run: |
+          node <<'NODE'
+          const fs=require('fs');
+          const {JSDOM,VirtualConsole}=require('jsdom');
+          const html=fs.readFileSync('index.html','utf8');
+          const vc=new VirtualConsole();
+          vc.on('jsdomError',e=>console.error('JSDOM ERROR:',e.message));
+          const dom=new JSDOM(html,{
+            runScripts:'dangerously',
+            pretendToBeVisual:true,
+            url:'https://project-balboa.github.io/?lang=en',
+            virtualConsole:vc,
+            beforeParse(window){window.IntersectionObserver=class{observe(){} disconnect(){}};}
+          });
+          setTimeout(()=>{
+            const h1=dom.window.document.querySelector('h1')?.textContent.trim();
+            const lang=dom.window.document.documentElement.lang;
+            const en=dom.window.document.getElementById('langEn');
+            console.log('LANG:',lang);
+            console.log('EN ACTIVE:',en?.classList.contains('active'));
+            console.log('H1:',h1);
+            if(lang!=='en') process.exit(1);
+            if(!en?.classList.contains('active')) process.exit(1);
+            if(h1!=='Panama does not need a new currency.') process.exit(1);
+          },500);
+          NODE
+      - name: Commit verified fix
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html assets/i18n.js
+          git commit -m "Fix English language rendering"
+          git push
