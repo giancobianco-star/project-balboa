@@ -1,27 +1,278 @@
-(()=>{
-const EN={
-'Oportunidad':'Opportunity','Cómo funciona':'How it works','Experiencia':'Experience','Caso país':'Country case','Riesgos':'Risks','Hoja de ruta':'Roadmap','Explorar':'Explore',
-'Concept Paper · Discussion Draft · 2026':'Concept Paper · Discussion Draft · 2026','Panamá no necesita una moneda nueva.':'Panama does not need a new currency.','Project Balboa propone una representación digital soberana del balboa, respaldada 100% por activos en dólares estadounidenses y diseñada como infraestructura pública de pagos, liquidación y confianza.':'Project Balboa proposes a sovereign digital representation of the balboa, backed 100% by U.S. dollar assets and designed as public infrastructure for payments, settlement and trust.','Entender el modelo →':'Understand the model →','Ver el caso país':'See the country case','Estabilidad del dólar':'Dollar stability','Infraestructura digital':'Digital infrastructure','Soberanía panameña':'Panamanian sovereignty','Paridad':'Parity','Liquidación':'Settlement','Respaldo':'Backing',
-'La oportunidad':'The opportunity','Modernizar el dinero sin desdolarizar la economía.':'Modernize money without de-dollarizing the economy.','Panamá ya tiene la disciplina monetaria. Project Balboa no pretende reinventarla: propone modernizar los rails sobre los cuales circula el dinero.':'Panama already has monetary discipline. Project Balboa does not seek to reinvent it; it proposes modernizing the rails on which money moves.','Paridad permanente':'Permanent parity','Cada B/.D existiría contra el equivalente exacto en activos USD.':'Every B/.D would exist against the exact equivalent in USD assets.','Sin emisión discrecional':'No discretionary issuance','No hay una nueva máquina de imprimir dinero.':'There is no new money-printing machine.','Settlement instantáneo':'Instant settlement','Pagos y liquidación en tiempo real, todos los días.':'Real-time payments and settlement, every day.','Infraestructura común':'Shared infrastructure','Bancos, fintechs, comercios y Estado sobre estándares interoperables.':'Banks, fintechs, merchants and government operating on interoperable standards.',
-'Confianza por diseño':'Trust by design','Respaldo, auditoría y seguridad no pueden ser una nota al pie.':'Backing, audit and security cannot be a footnote.','El fundamento del sistema es institucional antes que tecnológico.':'The system is institutional before it is technological.','Experiencia cotidiana':'Everyday experience','Si parece complejo, ya perdió.':'If it feels complex, it has already failed.','Debe sentirse como dinero, no como crypto.':'It should feel like money, not crypto.','Plataforma país':'National platform','Panamá ya sabe operar infraestructura crítica global.':'Panama already knows how to operate global critical infrastructure.','La próxima capa puede ser monetaria y digital.':'The next layer can be monetary and digital.',
-'Panamá hoy vs Project Balboa':'Panama today vs Project Balboa','PANAMÁ HOY':'PANAMA TODAY','Capas fragmentadas.':'Fragmented layers.','Procesos y conciliaciones dispersas':'Dispersed processes and reconciliation','Horarios de liquidación':'Settlement windows','Infraestructura poco interoperable':'Limited interoperability','Costos variables de intermediación':'Variable intermediation costs','Dependencia de rails heredados':'Dependence on legacy rails','Una capa monetaria común.':'A common monetary layer.','B/.D como dinero soberano digital':'B/.D as sovereign digital money','Settlement instantáneo 24/7':'Instant 24/7 settlement','Interoperabilidad nacional':'National interoperability','Privacidad y resiliencia por diseño':'Privacy and resilience by design','Compatible con banca y fintechs':'Compatible with banks and fintechs','Qué es':'What it is','Representación digital del balboa':'A digital representation of the balboa','Respaldo 100% en activos USD':'100% backed by USD assets','Convertibilidad permanente 1:1':'Permanent 1:1 convertibility','Infraestructura pública de settlement':'Public settlement infrastructure','Qué no es':'What it is not','Criptomoneda especulativa':'A speculative cryptocurrency','Stablecoin algorítmica':'An algorithmic stablecoin','Reemplazo de depósitos bancarios':'A replacement for bank deposits','Mecanismo para financiar al Gobierno':'A mechanism to finance government spending',
-'Un currency board digital soberano.':'A sovereign digital currency board.','La regla central es brutalmente simple: no puede existir un B/.D si el dólar equivalente no ha entrado primero a la reserva.':'The core rule is deliberately simple: a B/.D cannot exist unless the equivalent dollar has first entered the reserve.','Entra USD':'USD enters','Conversión':'Conversion','Reserva 100%':'100% reserve','Activos USD segregados':'Segregated USD assets','Se emite B/.D':'B/.D is issued','Contra reserva verificada':'Against verified reserves','Circula':'Circulates','Personas, bancos y Estado':'People, banks and government','Redención':'Redemption','Burn B/.D → libera USD':'Burn B/.D → release USD','No USD → No B/.D':'No USD → No B/.D',
-'Experiencia ciudadana':'Citizen experience','Simple. Segura. Cotidiana.':'Simple. Secure. Everyday.','El usuario no debería necesitar entender blockchain, tokenización o settlement. Debería sentir que está usando balboas: instantáneos, disponibles y fáciles de mover.':'People should not need to understand blockchain, tokenization or settlement. It should simply feel like using balboas: instant, available and easy to move.','Pagos y transferencias':'Payments and transfers','Capacidad limitada sin conexión':'Limited offline capability','Públicas y privadas':'Public and private','Privacidad':'Privacy','Protegida técnica y legalmente':'Protected technically and legally','Mi Balboa':'My Balboa','Saldo disponible':'Available balance','Enviar':'Send','Recibir':'Receive','Actividad reciente':'Recent activity','Hoy':'Today','Transferencia':'Transfer','Recibida':'Received','Transporte':'Transport','Ayer':'Yesterday','Café':'Coffee','Proveedor':'Supplier','Liquidado':'Settled',
-'Caso país':'Country case','Digitalizar la representación del balboa puede convertir circulación en reservas productivas.':'Digitizing the balboa can turn circulation into productive reserves.','Si parte de la circulación migra a B/.D, los activos que respaldan esa emisión podrían mantenerse en instrumentos USD líquidos y prudentes. El simulador es exclusivamente ilustrativo.':'If part of circulation migrates to B/.D, the assets backing that issuance could be held in liquid, prudent USD instruments. The simulator is illustrative only.','Simulador de reservas':'Reserve simulator','Circulación B/.D:':'B/.D circulation:','Rendimiento anual:':'Annual yield:','No es una proyección financiera. No descuenta costos operativos, liquidez, seguridad ni cambios en tasas.':'This is not a financial projection. It does not deduct operating costs, liquidity needs, security costs or changes in rates.','Rendimiento bruto ilustrativo':'Illustrative gross yield','por año':'per year',
-'Riesgos y guardrails':'Risks and guardrails','El principal riesgo no es tecnológico. Es de gobernanza.':'The main risk is not technological. It is governance.','Corrida bancaria digital':'Digital bank run','Límites prudenciales, transición gradual y herramientas de liquidez.':'Prudential limits, gradual transition and liquidity tools.','Ciberseguridad':'Cybersecurity','Arquitectura distribuida, redundancia, HSM y operación resiliente.':'Distributed architecture, redundancy, HSMs and resilient operations.','Vigilancia estatal':'State surveillance','Privacidad protegida por ley y separación entre identidad y emisión.':'Privacy protected by law and separation between identity and issuance.','Abuso fiscal':'Fiscal abuse','Prohibición de emisión sin respaldo y de financiamiento directo al Gobierno.':'Prohibition on unbacked issuance and direct government financing.','AML / reputación':'AML / reputation','Cumplimiento proporcional y estándares internacionales desde el diseño.':'Proportionate compliance and international standards by design.','Falla de adopción':'Adoption failure','La experiencia tiene que ser superior a los pagos existentes desde el primer día.':'The experience must be better than existing payments from day one.',
-'Diseñar. Probar. Escalar. Convertirlo en estándar.':'Design. Test. Scale. Make it a standard.','Diseño':'Design','Ley marco, gobernanza, arquitectura y sandbox.':'Framework law, governance, architecture and sandbox.','Lanzamiento':'Launch','Wallet, pilotos, bancos participantes y comercios.':'Wallet, pilots, participating banks and merchants.','Escala nacional':'National scale','Estado, interoperabilidad, offline y adopción amplia.':'Government, interoperability, offline capability and broad adoption.','Plataforma':'Platform','Capital markets, trade finance y activos tokenizados.':'Capital markets, trade finance and tokenized assets.','Estándar':'Standard','Balboa digital-first y retiro progresivo de nueva acuñación física.':'Digital-first balboa and progressive phase-out of new physical minting.',
-'Panamá no necesita crear una nueva moneda. Necesita construir la próxima versión de la que ya tiene.':'Panama does not need to create a new currency. It needs to build the next version of the one it already has.','Estabilidad del dólar. Infraestructura digital. Soberanía panameña.':'Dollar stability. Digital infrastructure. Panamanian sovereignty.','Volver arriba ↑':'Back to top ↑','Revisar el modelo':'Review the model',
-'¿Interesado en Project Balboa?':'Interested in Project Balboa?','Si estás explorando dinero digital, infraestructura pública, innovación financiera o posibles colaboraciones, nos interesa conversar.':'If you are exploring digital money, public infrastructure, financial innovation or potential collaboration, we would be glad to hear from you.','Contactar Project Balboa →':'Contact Project Balboa →','Conversemos':'Let’s talk','Versión 1.0 · septiembre de 2026':'Version 1.0 · September 2026','© 2026 Project Balboa. Todos los derechos reservados.':'© 2026 Project Balboa. All rights reserved.','Documento conceptual para discusión. No constituye política pública ni asesoría financiera.':'Conceptual document for discussion. It does not constitute public policy or financial advice.','Términos de uso':'Terms of Use','Contacto':'Contact'
+(() => {
+  'use strict';
+
+  const EN = {
+  "Oportunidad": "Opportunity",
+  "Cómo funciona": "How it works",
+  "Experiencia": "Experience",
+  "Caso país": "Country case",
+  "Riesgos": "Risks",
+  "Hoja de ruta": "Roadmap",
+  "Explorar": "Explore",
+  "Concept Paper · Discussion Draft · 2026": "Concept Paper · Discussion Draft · 2026",
+  "Panamá no necesita una moneda nueva.": "Panama does not need a new currency.",
+  "Project Balboa propone una representación digital soberana del balboa, respaldada 100% por activos en dólares estadounidenses y diseñada como infraestructura pública de pagos, liquidación y confianza.": "Project Balboa proposes a sovereign digital representation of the balboa, backed 100% by U.S. dollar assets and designed as public infrastructure for payments, settlement and trust.",
+  "Entender el modelo →": "Understand the model →",
+  "Ver el caso país": "See the country case",
+  "Estabilidad del dólar": "Dollar stability",
+  "Infraestructura digital": "Digital infrastructure",
+  "Soberanía panameña": "Panamanian sovereignty",
+  "Paridad": "Parity",
+  "Liquidación": "Settlement",
+  "Respaldo": "Backing",
+  "La oportunidad": "The opportunity",
+  "Modernizar el dinero sin desdolarizar la economía.": "Modernize money without de-dollarizing the economy.",
+  "Panamá ya tiene la disciplina monetaria. Project Balboa no pretende reinventarla: propone modernizar los rails sobre los cuales circula el dinero.": "Panama already has monetary discipline. Project Balboa does not seek to reinvent it; it proposes modernizing the rails on which money moves.",
+  "Paridad permanente": "Permanent parity",
+  "Cada B/.D existiría contra el equivalente exacto en activos USD.": "Every B/.D would exist against the exact equivalent in USD assets.",
+  "Sin emisión discrecional": "No discretionary issuance",
+  "No hay una nueva máquina de imprimir dinero.": "There is no new money-printing machine.",
+  "Settlement instantáneo": "Instant settlement",
+  "Pagos y liquidación en tiempo real, todos los días.": "Real-time payments and settlement, every day.",
+  "Infraestructura común": "Shared infrastructure",
+  "Bancos, fintechs, comercios y Estado sobre estándares interoperables.": "Banks, fintechs, merchants and government operating on interoperable standards.",
+  "Confianza por diseño": "Trust by design",
+  "Respaldo, auditoría y seguridad no pueden ser una nota al pie.": "Backing, audit and security cannot be a footnote.",
+  "El fundamento del sistema es institucional antes que tecnológico.": "The system is institutional before it is technological.",
+  "Experiencia cotidiana": "Everyday experience",
+  "Si parece complejo, ya perdió.": "If it feels complex, it has already failed.",
+  "Debe sentirse como dinero, no como crypto.": "It should feel like money, not crypto.",
+  "Plataforma país": "National platform",
+  "Panamá ya sabe operar infraestructura crítica global.": "Panama already knows how to operate global critical infrastructure.",
+  "La próxima capa puede ser monetaria y digital.": "The next layer can be monetary and digital.",
+  "Panamá hoy vs Project Balboa": "Panama today vs Project Balboa",
+  "PANAMÁ HOY": "PANAMA TODAY",
+  "Capas fragmentadas.": "Fragmented layers.",
+  "Procesos y conciliaciones dispersas": "Dispersed processes and reconciliation",
+  "Horarios de liquidación": "Settlement windows",
+  "Infraestructura poco interoperable": "Limited interoperability",
+  "Costos variables de intermediación": "Variable intermediation costs",
+  "Dependencia de rails heredados": "Dependence on legacy rails",
+  "Una capa monetaria común.": "A common monetary layer.",
+  "B/.D como dinero soberano digital": "B/.D as sovereign digital money",
+  "Settlement instantáneo 24/7": "Instant 24/7 settlement",
+  "Interoperabilidad nacional": "National interoperability",
+  "Privacidad y resiliencia por diseño": "Privacy and resilience by design",
+  "Compatible con banca y fintechs": "Compatible with banks and fintechs",
+  "Qué es": "What it is",
+  "Representación digital del balboa": "A digital representation of the balboa",
+  "Respaldo 100% en activos USD": "100% backed by USD assets",
+  "Convertibilidad permanente 1:1": "Permanent 1:1 convertibility",
+  "Infraestructura pública de settlement": "Public settlement infrastructure",
+  "Qué no es": "What it is not",
+  "Criptomoneda especulativa": "A speculative cryptocurrency",
+  "Stablecoin algorítmica": "An algorithmic stablecoin",
+  "Reemplazo de depósitos bancarios": "A replacement for bank deposits",
+  "Mecanismo para financiar al Gobierno": "A mechanism to finance government spending",
+  "Un currency board digital soberano.": "A sovereign digital currency board.",
+  "La regla central es brutalmente simple: no puede existir un B/.D si el dólar equivalente no ha entrado primero a la reserva.": "The core rule is deliberately simple: a B/.D cannot exist unless the equivalent dollar has first entered the reserve.",
+  "Entra USD": "USD enters",
+  "Conversión": "Conversion",
+  "Reserva 100%": "100% reserve",
+  "Activos USD segregados": "Segregated USD assets",
+  "Se emite B/.D": "B/.D is issued",
+  "Contra reserva verificada": "Against verified reserves",
+  "Circula": "Circulates",
+  "Personas, bancos y Estado": "People, banks and government",
+  "Redención": "Redemption",
+  "Burn B/.D → libera USD": "Burn B/.D → release USD",
+  "No USD → No B/.D": "No USD → No B/.D",
+  "Experiencia ciudadana": "Citizen experience",
+  "Simple. Segura. Cotidiana.": "Simple. Secure. Everyday.",
+  "El usuario no debería necesitar entender blockchain, tokenización o settlement. Debería sentir que está usando balboas: instantáneos, disponibles y fáciles de mover.": "People should not need to understand blockchain, tokenization or settlement. It should simply feel like using balboas: instant, available and easy to move.",
+  "Pagos y transferencias": "Payments and transfers",
+  "Capacidad limitada sin conexión": "Limited offline capability",
+  "Públicas y privadas": "Public and private",
+  "Privacidad": "Privacy",
+  "Protegida técnica y legalmente": "Protected technically and legally",
+  "Mi Balboa": "My Balboa",
+  "Saldo disponible": "Available balance",
+  "Enviar": "Send",
+  "Recibir": "Receive",
+  "Actividad reciente": "Recent activity",
+  "Hoy": "Today",
+  "Transferencia": "Transfer",
+  "Recibida": "Received",
+  "Transporte": "Transport",
+  "Ayer": "Yesterday",
+  "Café": "Coffee",
+  "Proveedor": "Supplier",
+  "Liquidado": "Settled",
+  "Digitalizar la representación del balboa puede convertir circulación en reservas productivas.": "Digitizing the balboa can turn circulation into productive reserves.",
+  "Si parte de la circulación migra a B/.D, los activos que respaldan esa emisión podrían mantenerse en instrumentos USD líquidos y prudentes. El simulador es exclusivamente ilustrativo.": "If part of circulation migrates to B/.D, the assets backing that issuance could be held in liquid, prudent USD instruments. The simulator is illustrative only.",
+  "Simulador de reservas": "Reserve simulator",
+  "Circulación B/.D:": "B/.D circulation:",
+  "Rendimiento anual:": "Annual yield:",
+  "No es una proyección financiera. No descuenta costos operativos, liquidez, seguridad ni cambios en tasas.": "This is not a financial projection. It does not deduct operating costs, liquidity needs, security costs or changes in rates.",
+  "Rendimiento bruto ilustrativo": "Illustrative gross yield",
+  "por año": "per year",
+  "Riesgos y guardrails": "Risks and guardrails",
+  "El principal riesgo no es tecnológico. Es de gobernanza.": "The main risk is not technological. It is governance.",
+  "Corrida bancaria digital": "Digital bank run",
+  "Límites prudenciales, transición gradual y herramientas de liquidez.": "Prudential limits, gradual transition and liquidity tools.",
+  "Ciberseguridad": "Cybersecurity",
+  "Arquitectura distribuida, redundancia, HSM y operación resiliente.": "Distributed architecture, redundancy, HSMs and resilient operations.",
+  "Vigilancia estatal": "State surveillance",
+  "Privacidad protegida por ley y separación entre identidad y emisión.": "Privacy protected by law and separation between identity and issuance.",
+  "Abuso fiscal": "Fiscal abuse",
+  "Prohibición de emisión sin respaldo y de financiamiento directo al Gobierno.": "Prohibition on unbacked issuance and direct government financing.",
+  "AML / reputación": "AML / reputation",
+  "Cumplimiento proporcional y estándares internacionales desde el diseño.": "Proportionate compliance and international standards by design.",
+  "Falla de adopción": "Adoption failure",
+  "La experiencia tiene que ser superior a los pagos existentes desde el primer día.": "The experience must be better than existing payments from day one.",
+  "Diseñar. Probar. Escalar. Convertirlo en estándar.": "Design. Test. Scale. Make it a standard.",
+  "Diseño": "Design",
+  "Ley marco, gobernanza, arquitectura y sandbox.": "Framework law, governance, architecture and sandbox.",
+  "Lanzamiento": "Launch",
+  "Wallet, pilotos, bancos participantes y comercios.": "Wallet, pilots, participating banks and merchants.",
+  "Escala nacional": "National scale",
+  "Estado, interoperabilidad, offline y adopción amplia.": "Government, interoperability, offline capability and broad adoption.",
+  "Plataforma": "Platform",
+  "Capital markets, trade finance y activos tokenizados.": "Capital markets, trade finance and tokenized assets.",
+  "Estándar": "Standard",
+  "Balboa digital-first y retiro progresivo de nueva acuñación física.": "Digital-first balboa and progressive phase-out of new physical minting.",
+  "Panamá no necesita crear una nueva moneda. Necesita construir la próxima versión de la que ya tiene.": "Panama does not need to create a new currency. It needs to build the next version of the one it already has.",
+  "Estabilidad del dólar. Infraestructura digital. Soberanía panameña.": "Dollar stability. Digital infrastructure. Panamanian sovereignty.",
+  "Volver arriba ↑": "Back to top ↑",
+  "Revisar el modelo": "Review the model",
+  "¿Interesado en Project Balboa?": "Interested in Project Balboa?",
+  "Si estás explorando dinero digital, infraestructura pública, innovación financiera o posibles colaboraciones, nos interesa conversar.": "If you are exploring digital money, public infrastructure, financial innovation or potential collaboration, we would be glad to hear from you.",
+  "Contactar Project Balboa →": "Contact Project Balboa →",
+  "Conversemos": "Let’s talk",
+  "Versión 1.0 · septiembre de 2026": "Version 1.0 · September 2026",
+  "© 2026 Project Balboa. Todos los derechos reservados.": "© 2026 Project Balboa. All rights reserved.",
+  "Documento conceptual para discusión. No constituye política pública ni asesoría financiera.": "Conceptual document for discussion. It does not constitute public policy or financial advice.",
+  "Términos de uso": "Terms of Use",
+  "Contacto": "Contact"
 };
-const ES_TITLE='Project Balboa | Infraestructura Monetaria Digital';
-const EN_TITLE='Project Balboa | Digital Sovereign Money Infrastructure';
-const snapshots=[];
-const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode(n){return n.parentElement&&!['SCRIPT','STYLE'].includes(n.parentElement.tagName)&&n.nodeValue.trim()?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT}});
-let node;while(node=walker.nextNode())snapshots.push([node,node.nodeValue]);
-function render(lang){lang=lang==='en'?'en':'es';snapshots.forEach(([n,original])=>{const key=original.trim(),lead=(original.match(/^\s*/)||[''])[0],trail=(original.match(/\s*$/)||[''])[0];n.nodeValue=lang==='en'&&Object.prototype.hasOwnProperty.call(EN,key)?lead+EN[key]+trail:original});document.documentElement.lang=lang;document.title=lang==='en'?EN_TITLE:ES_TITLE;const es=document.getElementById('langEs'),en=document.getElementById('langEn');if(es&&en){es.classList.toggle('active',lang==='es');en.classList.toggle('active',lang==='en');es.setAttribute('aria-pressed',lang==='es');en.setAttribute('aria-pressed',lang==='en')}const u=new URL(location.href);u.searchParams.set('lang',lang);history.replaceState({},'',u);try{localStorage.setItem('pb-lang',lang)}catch(e){}const terms=document.getElementById('termsLink');if(terms)terms.href='terms.html?lang='+lang;const metaDesc=document.querySelector('meta[name="description"]');if(metaDesc)metaDesc.content=lang==='en'?'Project Balboa — Dollar stability. Digital infrastructure. Panamanian sovereignty.':'Project Balboa — estabilidad del dólar, infraestructura digital y soberanía panameña.'}
-const ogTitle=document.querySelector('meta[property="og:title"]');if(ogTitle)ogTitle.content=lang==='en'?EN_TITLE:ES_TITLE;const ogDesc=document.querySelector('meta[property="og:description"]');if(ogDesc)ogDesc.content=lang==='en'?'Dollar stability. Digital infrastructure. Panamanian sovereignty.':'Estabilidad del dólar. Infraestructura digital. Soberanía panameña.'}
-}
-const esBtn=document.getElementById('langEs'),enBtn=document.getElementById('langEn');if(esBtn)esBtn.addEventListener('click',()=>render('es'));if(enBtn)enBtn.addEventListener('click',()=>render('en'));
-const contact=document.getElementById('contactLink');if(contact){const email=(contact.dataset.u||'')+'@'+(contact.dataset.d||'');contact.href='mailto:'+email+'?subject='+encodeURIComponent('Project Balboa — Inquiry')}
-const q=new URLSearchParams(location.search).get('lang');let saved=null;try{saved=localStorage.getItem('pb-lang')}catch(e){}const browser=(navigator.language||'en').toLowerCase().startsWith('es')?'es':'en';render((q==='es'||q==='en')?q:(saved||browser));
+  const ES_TITLE = 'Project Balboa | Infraestructura Monetaria Digital';
+  const EN_TITLE = 'Project Balboa | Digital Sovereign Money Infrastructure';
+
+  const originals = new Map();
+
+  function collectTextNodes() {
+    const walker = document.createTreeWalker(
+      document.body,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode(node) {
+          const parent = node.parentElement;
+          if (!parent || ['SCRIPT', 'STYLE', 'NOSCRIPT'].includes(parent.tagName)) {
+            return NodeFilter.FILTER_REJECT;
+          }
+          return node.nodeValue && node.nodeValue.trim()
+            ? NodeFilter.FILTER_ACCEPT
+            : NodeFilter.FILTER_REJECT;
+        }
+      }
+    );
+
+    let node;
+    while ((node = walker.nextNode())) {
+      if (!originals.has(node)) originals.set(node, node.nodeValue);
+    }
+  }
+
+  function translateText(lang) {
+    originals.forEach((original, node) => {
+      if (!node.isConnected) return;
+      if (lang === 'en') {
+        const key = original.trim();
+        if (Object.prototype.hasOwnProperty.call(EN, key)) {
+          const lead = (original.match(/^\s*/) || [''])[0];
+          const trail = (original.match(/\s*$/) || [''])[0];
+          node.nodeValue = lead + EN[key] + trail;
+        } else {
+          node.nodeValue = original;
+        }
+      } else {
+        node.nodeValue = original;
+      }
+    });
+  }
+
+  function render(lang) {
+    lang = lang === 'en' ? 'en' : 'es';
+    if (!originals.size) collectTextNodes();
+    translateText(lang);
+
+    document.documentElement.lang = lang;
+    document.title = lang === 'en' ? EN_TITLE : ES_TITLE;
+
+    const es = document.getElementById('langEs');
+    const en = document.getElementById('langEn');
+    if (es && en) {
+      es.classList.toggle('active', lang === 'es');
+      en.classList.toggle('active', lang === 'en');
+      es.setAttribute('aria-pressed', String(lang === 'es'));
+      en.setAttribute('aria-pressed', String(lang === 'en'));
+    }
+
+    const terms = document.getElementById('termsLink');
+    if (terms) terms.href = 'terms.html?lang=' + lang;
+
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.content = lang === 'en'
+        ? 'Project Balboa — Dollar stability. Digital infrastructure. Panamanian sovereignty.'
+        : 'Project Balboa — estabilidad del dólar, infraestructura digital y soberanía panameña.';
+    }
+
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.content = lang === 'en' ? EN_TITLE : ES_TITLE;
+
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) {
+      ogDesc.content = lang === 'en'
+        ? 'Dollar stability. Digital infrastructure. Panamanian sovereignty.'
+        : 'Estabilidad del dólar. Infraestructura digital. Soberanía panameña.';
+    }
+
+    try {
+      localStorage.setItem('pb-lang', lang);
+    } catch (e) {}
+
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.set('lang', lang);
+      history.replaceState({}, '', url);
+    } catch (e) {}
+  }
+
+  function init() {
+    collectTextNodes();
+
+    const esBtn = document.getElementById('langEs');
+    const enBtn = document.getElementById('langEn');
+
+    if (esBtn) esBtn.addEventListener('click', () => render('es'));
+    if (enBtn) enBtn.addEventListener('click', () => render('en'));
+
+    const contact = document.getElementById('contactLink');
+    if (contact) {
+      const email = (contact.dataset.u || '') + '@' + (contact.dataset.d || '');
+      contact.href = 'mailto:' + email + '?subject=' + encodeURIComponent('Project Balboa — Inquiry');
+    }
+
+    const queryLang = new URLSearchParams(window.location.search).get('lang');
+    let saved = null;
+    try {
+      saved = localStorage.getItem('pb-lang');
+    } catch (e) {}
+
+    const browserLang = (navigator.language || 'en').toLowerCase().startsWith('es') ? 'es' : 'en';
+    const initial = (queryLang === 'es' || queryLang === 'en')
+      ? queryLang
+      : (saved === 'es' || saved === 'en')
+        ? saved
+        : browserLang;
+
+    render(initial);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init, { once: true });
+  } else {
+    init();
+  }
 })();
